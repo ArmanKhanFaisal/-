@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#153c31">
+<meta name="description" content="আয়াতস্রোত — পবিত্র কুরআন ও হাদিস পড়ার সহজ বাংলা ডিজিটাল পাঠাগার।">
+<title>আয়াতস্রোত — কুরআন ও হাদিস পাঠাগার</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="আয়াতস্রোত হোম"><span class="brand-mark">۞</span><span><b>আয়াতস্রোত</b><small>আলোর পথে, আয়াতের সাথে</small></span></a>
+  <nav class="desktop-nav" aria-label="প্রধান নেভিগেশন">
+    <button class="nav-btn active" data-view="quran">আল-কুরআন</button><button class="nav-btn" data-view="hadith">হাদিস</button><button class="nav-btn" data-view="bookmarks">বুকমার্ক</button>
+  </nav>
+  <div class="top-actions"><button id="themeBtn" class="icon-btn" aria-label="থিম পরিবর্তন" title="থিম পরিবর্তন">☾</button><button id="menuBtn" class="icon-btn mobile-only" aria-label="মেনু">☰</button></div>
+</header>
+<nav id="mobileNav" class="mobile-nav hidden"><button class="nav-btn active" data-view="quran">আল-কুরআন</button><button class="nav-btn" data-view="hadith">হাদিস</button><button class="nav-btn" data-view="bookmarks">বুকমার্ক</button></nav>
+<main>
+<section class="hero">
+  <div class="hero-pattern"></div><div class="hero-content"><span class="eyebrow">আপনার ডিজিটাল ইসলামিক পাঠাগার</span>
+  <h1>পড়ুন, জানুন,<br><em>হৃদয়ে ধারণ করুন</em></h1>
+  <p>পবিত্র কুরআন ও হাদিস পড়ুন সহজে—যেকোনো সময়, যেকোনো ডিভাইসে।</p>
+  <div class="hero-buttons"><button class="primary-btn" data-view="quran">কুরআন পড়ুন <span>↗</span></button><button class="outline-btn" data-view="hadith">হাদিস পড়ুন</button></div>
+  <div class="hero-stats"><div><b>১১৪</b><span>সূরা</span></div><i></i><div><b>৩০</b><span>পারা</span></div><i></i><div><b>সহজ</b><span>পাঠের অভিজ্ঞতা</span></div></div>
+  </div><div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="book-stand"><div class="book-page page-left"><span>بِسْمِ اللَّهِ</span><span>الرَّحْمَٰنِ الرَّحِيمِ</span><span class="ornament">۞</span></div><div class="book-page page-right"><span>الْحَمْدُ لِلَّهِ</span><span>رَبِّ الْعَالَمِينَ</span><span class="ornament">۞</span></div></div><div class="art-caption">الْقُرْآنُ الْكَرِيمُ</div></div>
+</section>
+<section class="quick-links" aria-label="দ্রুত শুরু">
+  <button class="quick-card" data-view="quran"><span class="quick-icon">۞</span><span><b>আল-কুরআন</b><small>সূরা ও আয়াত পড়ুন</small></span><span class="arrow">↗</span></button>
+  <button class="quick-card" data-view="hadith"><span class="quick-icon hadith-icon">▤</span><span><b>হাদিস পাঠাগার</b><small>সংকলন ও বিষয়ভিত্তিক পাঠ</small></span><span class="arrow">↗</span></button>
+  <button class="quick-card" id="continueCard"><span class="quick-icon">⌁</span><span><b>পড়া চালিয়ে যান</b><small id="continueText">আপনার শেষ পড়া স্থান</small></span><span class="arrow">↗</span></button>
+</section>
+<section class="content-section" id="quranSection">
+  <div class="section-heading"><div><span class="eyebrow green">পবিত্র গ্রন্থ</span><h2>আল-কুরআন</h2><p>সূরা নির্বাচন করুন অথবা নাম দিয়ে খুঁজুন।</p></div><div class="search-wrap"><span>⌕</span><input id="surahSearch" type="search" placeholder="সূরা খুঁজুন..." aria-label="সূরা খুঁজুন"></div></div>
+  <div class="reader-layout">
+    <aside class="surah-panel"><div class="panel-title"><b>সূরা তালিকা</b><span id="surahCount">১১৪টি সূরা</span></div><div id="surahList" class="surah-list"></div></aside>
+    <article class="reader-panel" id="readerPanel">
+      <div class="reader-top"><div><span class="eyebrow green">আপনি এখন পড়ছেন</span><h3 id="surahTitle">সূরা আল-ফাতিহা</h3><p id="surahMeta">মাক্কী • ৭ আয়াত</p></div><button id="fontBtn" class="small-btn" title="আরবি লেখা বড় করুন">A+</button></div>
+      <div class="reader-controls"><label>অনুবাদ <select id="translationSelect"><option value="bn">বাংলা অর্থ</option><option value="none">অনুবাদ বন্ধ</option></select></label><label>আয়াতের আকার <select id="fontSize"><option value="normal">স্বাভাবিক</option><option value="large">বড়</option><option value="xlarge">আরও বড়</option></select></label></div>
+      <div id="verses" class="verses"><div class="empty-state">কুরআনের পাঠ লোড হচ্ছে...</div></div>
+      <div class="reader-bottom"><button id="prevSurah" class="outline-btn">← আগের সূরা</button><button id="nextSurah" class="primary-btn">পরের সূরা →</button></div>
+      <p class="source-note">পাঠ্য ও অনুবাদ নির্ভরযোগ্য উৎস থেকে যাচাই করে ব্যবহার করুন।</p>
+    </article>
+  </div>
+</section>
+<section class="content-section hadith-section hidden" id="hadithSection">
+ <div class="section-heading"><div><span class="eyebrow green">নবীজির বাণী</span><h2>হাদিস পাঠাগার</h2><p>সংকলন নির্বাচন করুন এবং হাদিস খুঁজুন।</p></div><div class="search-wrap"><span>⌕</span><input id="hadithSearch" type="search" placeholder="হাদিস খুঁজুন..." aria-label="হাদিস খুঁজুন"></div></div>
+ <div class="hadith-tools"><label for="collectionSelect">হাদিস সংকলন</label><select id="collectionSelect"><option value="all">সব সংকলন</option><option value="bukhari">সহিহ আল-বুখারি</option><option value="muslim">সহিহ মুসলিম</option><option value="tirmidhi">জামে আত-তিরমিজি</option><option value="abudawud">সুনান আবু দাউদ</option></select></div>
+ <div id="hadithList" class="hadith-grid"></div>
+ <div class="notice"><b>গুরুত্বপূর্ণ:</b> এই প্রাথমিক সংস্করণে হাদিসের কিছু উদাহরণ দেখানো হয়েছে। পূর্ণ হাদিস সংকলন প্রকাশের আগে নির্ভরযোগ্য আরবি মূলপাঠ, অনুবাদ, অধ্যায় ও নম্বর যাচাই করে যুক্ত করতে হবে।</div>
+</section>
+<section class="content-section hidden" id="bookmarksSection"><div class="section-heading"><div><span class="eyebrow green">আপনার সংগ্রহ</span><h2>বুকমার্ক করা আয়াত</h2><p>পরে পড়ার জন্য সংরক্ষণ করা আয়াত এখানে পাবেন।</p></div></div><div id="bookmarkList" class="bookmark-list"></div></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">۞</span><span><b>আয়াতস্রোত</b><small>আলোর পথে, আয়াতের সাথে</small></span></a><p>জ্ঞান অর্জন ও পাঠের জন্য তৈরি একটি সহজ ডিজিটাল ইসলামিক পাঠাগার।</p><small>ধর্মীয় পাঠ্য প্রকাশের আগে মূল উৎস ও অনুবাদ যাচাই করুন।</small></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
